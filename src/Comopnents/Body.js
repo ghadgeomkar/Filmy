@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Utils/Firebase';
 import AuthenticationUser from './AuthenticationUser';
@@ -22,7 +22,7 @@ const Body = () => {
   }, []);
 
   return (
-    <Router>
+    <BrowserRouter basename='/Filmy'>
       <Routes>
         <Route path="/" element={<ConditionalAuthenticationUser user={user} />} />
         <Route path="/home" element={user ? <Home /> : <Navigate to="/" />} />
@@ -31,7 +31,7 @@ const Body = () => {
         <Route path="/searchmovie/:id" element={user ? <Suspense fallback={<h1>loading...</h1>} > <SearchMovie /> </Suspense> : <Navigate to="/" />} />
         <Route path="/watchmovie/:id" element={user ? <Suspense fallback={<h1>loading...</h1>} > <WatchMovie /> </Suspense> : <Navigate to="/" />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
