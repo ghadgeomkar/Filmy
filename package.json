@@ -1,7 +1,6 @@
 {
   "name": "filmy",
   "version": "0.1.0",
-  "homepage": "https://ghadgeomkar.github.io/Filmy",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
