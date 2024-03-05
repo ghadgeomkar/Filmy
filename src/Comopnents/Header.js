@@ -14,23 +14,12 @@ import menuIcon from '../Images/menu-regular-24.png'
 const Header = () => {
 
     const [handelUser, setHandelUser] = useState(false)
-    const [userLogIn, setuserLogIn] = useState(false)
     const [search, setSeach] = useState(false)
     const [mobile, setmobile] = useState(false)
     const [getQuery, setgetQuery] = useState('')
     const navigate = useNavigate()
     const getWatchListMovie = JSON.parse(localStorage.getItem('watchList'))
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setuserLogIn(!userLogIn)
-            } else {
-
-            }
-        });
-        return () => unsubscribe
-    }, [])
 
     const handelLogOut = () => {
         signOut(auth).then(() => {
@@ -83,7 +72,9 @@ const Header = () => {
                         {/* {
                                 getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
                             } */}
-                        <p className='watchListCount'>{getWatchListMovie.length}</p>
+                        {
+                            getWatchListMovie === null ? <p className='watchListCount'>0</p> : <p className='watchListCount'>{getWatchListMovie.length}</p>
+                        }
                     </Link>
                 </div>}
             </div>
@@ -103,7 +94,9 @@ const Header = () => {
                                 {/* {
                                         getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
                                     } */}
-                                <p className='watchListCount'>{getWatchListMovie.length}</p>
+                                {
+                                    getWatchListMovie === null ? <p className='watchListCount'>0</p> : <p className='watchListCount'>{getWatchListMovie.length}</p>
+                                }
                             </Link>
                         </div>
                         <div className='SearchMovie'>
