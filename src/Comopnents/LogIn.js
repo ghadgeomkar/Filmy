@@ -65,7 +65,6 @@ const LogIn = () => {
 
     return (
         <div className='logInSection'>
-            <Header />
             <div className='logInPage'>
                 <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg" alt="" />
                 <div className='logIn'>

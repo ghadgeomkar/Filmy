@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../Utils/Firebase';
 import { useDispatch } from 'react-redux';
-import { toggelPage, userLoginStatus } from '../Store/ShowAuthPageSlice';
+import { toggelPage } from '../Store/ShowAuthPageSlice';
 import { useDrop } from 'react-dnd';
 import { Link } from 'react-router-dom';
 import searchIcon from '../Images/search-regular-24 (1).png'
@@ -19,15 +19,12 @@ const Header = () => {
     const [mobile, setmobile] = useState(false)
     const [getQuery, setgetQuery] = useState('')
     const navigate = useNavigate()
-    const dispatch = useDispatch()
     const getWatchListMovie = JSON.parse(localStorage.getItem('watchList'))
-
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setuserLogIn(!userLogIn)
-                dispatch(userLoginStatus())
             } else {
 
             }
@@ -75,51 +72,49 @@ const Header = () => {
 
     return (
         <div className='header'>
-            {
-                userLogIn && <div className='mobileMenu'>
-                    <img src={mobile ? closeIcon : menuIcon} alt="menu" onClick={() => setmobile(!mobile)} />
-                    {mobile && <div className='mobileMenuSections'>
-                        <Link to='/home'>
-                            <h2>Home</h2>
-                        </Link>
-                        <Link to='/watchlist'>
-                            <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
-                            {/* {
+            <div className='mobileMenu'>
+                <img src={mobile ? closeIcon : menuIcon} alt="menu" onClick={() => setmobile(!mobile)} />
+                {mobile && <div className='mobileMenuSections'>
+                    <Link to='/home'>
+                        <h2>Home</h2>
+                    </Link>
+                    <Link to='/watchlist'>
+                        <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
+                        {/* {
                                 getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
                             } */}
-                            <p className='watchListCount'>0</p>
-                        </Link>
-                    </div>}
-                </div>
-            }
+                        <p className='watchListCount'>{getWatchListMovie.length}</p>
+                    </Link>
+                </div>}
+            </div>
+
             <img className='webLogo'
                 src={logo} alt="web_logo" width='107px' height='45px' />
             <div className='headerRightSection'>
 
                 <div ref={drop} className='watchList'>
-                    {
-                        userLogIn && <div className='menu'>
-                            <div className='menuSections'>
-                                <Link to='/home'>
-                                    <h2>Home</h2>
-                                </Link>
-                                <Link to='/watchlist'>
-                                    <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
-                                    {/* {
+                    <div className='menu'>
+                        <div className='menuSections'>
+                            <Link to='/home'>
+                                <h2>Home</h2>
+                            </Link>
+                            <Link to='/watchlist'>
+                                <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
+                                {/* {
                                         getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
                                     } */}
-                                    <p className='watchListCount'>0</p>
-                                </Link>
-                            </div>
-                            <div className='SearchMovie'>
-                                <img src={search ? closeIcon : searchIcon} alt="SearchImage" onClick={() => setSeach(!search)} />
-                                {search && <div className='search'>
-                                    <img src={searchIcon} alt="SearchImage" />
-                                    <input type="text" placeholder='Search' onChange={(e) => setgetQuery(e.target.value)} onKeyDown={handelKeyDown} />
-                                </div>}
-                            </div>
+                                <p className='watchListCount'>{getWatchListMovie.length}</p>
+                            </Link>
                         </div>
-                    }
+                        <div className='SearchMovie'>
+                            <img src={search ? closeIcon : searchIcon} alt="SearchImage" onClick={() => setSeach(!search)} />
+                            {search && <div className='search'>
+                                <img src={searchIcon} alt="SearchImage" />
+                                <input type="text" placeholder='Search' onChange={(e) => setgetQuery(e.target.value)} onKeyDown={handelKeyDown} />
+                            </div>}
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className='userLogo'>
@@ -132,17 +127,14 @@ const Header = () => {
                     {
                         handelUser ? <>
                             <div className='userDropDown'>
-                                {
-                                    userLogIn ? <h2 onClick={handelLogOut}>Log Out</h2> :
-                                        <h2 onClick={() => dispatch(toggelPage())}>Sing In</h2>
-                                }
+                                <h2 onClick={handelLogOut}>Log Out</h2>
                             </div>
                         </> : ''
                     }
 
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

@@ -42,42 +42,44 @@ const WatchMovie = () => {
         getMovieDetail()
     }, [])
 
+    if (!getKey || !getDetails) {
+        return <h1 style={{ color: 'white' }}>Loading...</h1>
+    }
 
     return (<div>
         <Header />
 
         {getKey === undefined ? <p className='notFoundMovie'>I can't able to find this movie </p> :
-            !getKey || !getDetails ? <h1 style={{ color: 'white' }}>Loading...</h1> :
-                <>
-                    <div>
-                        <div className='watchMovie'>
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                src={'https://www.youtube.com/embed/' + getKey + '?rel=0&autoplay=1&mute=0'}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen>
-                            </iframe>
+            <>
+                <div>
+                    <div className='watchMovie'>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src={'https://www.youtube.com/embed/' + getKey + '?rel=0&autoplay=1&mute=0'}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                    <div className='movieDetails'>
+                        <div className='addWatchList'>
+                            <h3>Watch Later :- </h3>
+                            <button onClick={() => handelWatchList()}>Add</button>
                         </div>
-                        <div className='movieDetails'>
-                            <div className='addWatchList'>
-                                <h3>Watch Later :- </h3>
-                                <button onClick={() => handelWatchList()}>Add</button>
-                            </div>
-                            <h1>Details</h1>
-                            <div className='details'>
-                                <p>Name :- {getDetails.title}</p>
-                                <p>Overview :- {getDetails.overview}</p>
-                                <p>Release Date :- {getDetails.release_date}</p>
-                                {getDetails.imdb_id && ( // Check if imdb_id is not null
-                                    <p>IMDB Details :- <a href={`https://www.imdb.com/title/${getDetails.imdb_id}/?ref_=hm_tpks_tt_i_1_pd_tp1_pbr`} target='_blank' rel="noreferrer" > IMDB </a></p>
-                                )}
-                            </div>
+                        <h1>Details</h1>
+                        <div className='details'>
+                            <p>Name :- {getDetails.title}</p>
+                            <p>Overview :- {getDetails.overview}</p>
+                            <p>Release Date :- {getDetails.release_date}</p>
+                            {getDetails.imdb_id && ( // Check if imdb_id is not null
+                                <p>IMDB Details :- <a href={`https://www.imdb.com/title/${getDetails.imdb_id}/?ref_=hm_tpks_tt_i_1_pd_tp1_pbr`} target='_blank' rel="noreferrer" > IMDB </a></p>
+                            )}
                         </div>
                     </div>
-                </>
+                </div>
+            </>
         }
     </div>
 

@@ -5,6 +5,7 @@ import BG_IMAGE from '../Images/bg_logo.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggelPage } from '../Store/ShowAuthPageSlice'
 import LogIn from './LogIn'
+import LoginHeader from './LoginHeader'
 
 const AuthenticationUser = () => {
 
@@ -16,11 +17,11 @@ const AuthenticationUser = () => {
 
   return (
     <>
+      <LoginHeader />
       {
         showAuthPage ?
           <div className='authenticationUserSeaction'>
             <div className='authenticationUser'>
-              <Header />
               <div>
                 <img className='authenticationUserBgImage' src={BG_IMAGE} alt="bg_image" />
                 <div className='userWelcomeText'>
