@@ -30,8 +30,11 @@ const SearchMovie = () => {
         }
     }, [id])
 
-
-    return (data === null ? <h1 style={{ color: 'white' }}>Loading...</h1> :
+    if (data === null) {
+        return <h1 style={{ color: 'white' }}>Loading...</h1>
+    }
+    
+    return (
         <>
             <Header />
             <div className='searchMovieComponent'>
@@ -45,6 +48,7 @@ const SearchMovie = () => {
             </div>
         </>
     )
+
 }
 
 export default SearchMovie

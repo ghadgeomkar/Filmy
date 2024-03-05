@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const WatchList = () => {
 
     const [movies, setMovies] = useState([]);
-    const getMovies = JSON.parse(localStorage.getItem('watchList'));
+    const getMovies = JSON.parse(localStorage.getItem('watchList')) || [];
 
 
     useEffect(() => {
