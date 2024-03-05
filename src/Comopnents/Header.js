@@ -28,8 +28,8 @@ const Header = () => {
             if (user) {
                 setuserLogIn(!userLogIn)
                 dispatch(userLoginStatus())
-            }else{
-                
+            } else {
+
             }
         });
         return () => unsubscribe
@@ -84,9 +84,10 @@ const Header = () => {
                         </Link>
                         <Link to='/watchlist'>
                             <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
-                            {
+                            {/* {
                                 getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
-                            }
+                            } */}
+                            <p className='watchListCount'>0</p>
                         </Link>
                     </div>}
                 </div>
@@ -104,9 +105,10 @@ const Header = () => {
                                 </Link>
                                 <Link to='/watchlist'>
                                     <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
-                                    {
+                                    {/* {
                                         getWatchListMovie.length > 0 && <p className='watchListCount'>{getWatchListMovie.length}</p>
-                                    }
+                                    } */}
+                                    <p className='watchListCount'>0</p>
                                 </Link>
                             </div>
                             <div className='SearchMovie'>
