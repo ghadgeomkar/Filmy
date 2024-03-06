@@ -1,70 +1,36 @@
-# Features :
-color theme :- E2C044 / black
-bg image :- https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Right.jpg
+Filmy is a Movie Streaming Web Application
+Overview
+This project is a movie streaming web application built using React.js for the frontend and Firebase for user authentication. It allows users to browse through a collection of movies, watch trailers, add movies to their watchlist, and search for specific movies. The application fetches movie data from The Movie Database (TMDb) API to display information about movies.
 
-
-- login/singUp page :- here you check firebase Authentication by google or with email and password (https://www.youtube.com/playlist?list=PLB97yPrFwo5hrMS7symkj4IW4v3xa_kjZ) 
-- Home page (after login )
-  - Header
-    - here we also have search functionality where i search the movie. in this feature suppose user type somthing inside the input baar and when we click the
-      seach button then new page is open and there he see the result of the input 
-    - here you also make Genres / categories page where you see some categories like action, horror and if suppose user click this horror categories then he go to new page there he first get that categories name and then he get the movies   
-  - body
-    - firstSeaction
-      - one movie play in background  
-    - secondSeaction
-      - all movie list like Action, adventure, popular movies etc...  
-- and in that list we have see more button and if user click that button he see the movie with numbers like in 1 page he get 20 movie then he go to 2 page like this 
-
-
-
-* challanging thing :- 
- - add debouicng to search - M
- - also make suggestion bar - M
- -  use cache - M  ✔️
- - test - L
- - shimmer UI  ✔️
- - use web workers to handel this expensive function - M
- - use service worker to make your website run in offile - L
- - progressive web apps  - L
- - material Ui pagination ✔️
- - Drag and Drop here you use libraries like react-beautiful-dnd so suppose iw ant to put a movie to wishList section then you do drag and drop ✔️
- - Advanced Search Filters like :- genre, release year, rating, language, etc. 
- - create watchlists ✔️
- - Monitor performance metrics using tools like Google PageSpeed Insights or WebPageTest and make necessary optimizations.
- - Performance Optimization:- 
-   - Lazy Loading Images
-   - Code Splitting
-   - put your website to CDN then your get static content fast
-   - Tree Shaking :- Optimize your JavaScript bundle size by eliminating unused code using tree shaking techniques. Use tools like Webpack or Rollup.js to
-     automatically remove dead code and reduce bundle size.
-   - Bundle Optimization: Optimize your CSS and JavaScript bundles for size and performance. Minify and compress your assets, remove unnecessary whitespace and comments, and use tools like Gzip or Brotli compression to further reduce file size.
- - also check your website is good responsive check in google that we have any website that give me this insurance,
- - use D3.js for roducing dynamic, interactive data visualizations in web browsers. example :- Trending movies over time, Top-rated movies, Box office revenue by movie etc... You could use bar charts, pie charts, line charts, and other visualization techniques to present this data in an engaging and informative way.
-
-
-
-for up-Skilling :- https://legacy.reactjs.org/docs/optimizing-performance.html
-
-
-* unfire advanteg :- 
- -writing test,
- - what is CI and CD, 
- - what is webpack build tool
- - progressive web apps or service workers, what is web computing,
- - what is web assembly, Real-time Chat or Messaging,
- - make your website in diffrent languages using Firebase Cloud Functions along with a translation API,
- - Infinite Scrolling
- - use framer for animation 
- - Make your website accessible for disabile people by following WCAG (Web Content Accessibility Guidelines) standards. 
-
-
-
-
-
-
-
-
+Features
+User Authentication
+Users can sign in or sign up to access the application.
+Authentication is handled using Firebase Authentication.
+Authentication status is managed using the Redux toolkit and React Router.
+Home Page
+The home page displays various sections of movies, including Now Playing, Upcoming, Top Rated, and Popular movies.
+Movie data is fetched from the TMDb API and displayed using React components.
+Users can click on movie cards to view more details about each movie.
+Movie Details Page
+The movie details page shows detailed information about a selected movie.
+It includes the movie's title, overview, release date, and an option to watch the movie trailer.
+Users can add movies to their watchlist from the movie details page.
+More Movies Page
+The more movies page allows users to view additional movies based on specific categories.
+Pagination is implemented to navigate through multiple pages of movie results.
+Search Functionality
+Users can search for specific movies using the search bar.
+Search results are displayed on a separate page, showing movie posters matching the search query.
+Watchlist Management
+Users can add movies to their watchlist to save movies for later viewing.
+Watchlist data is stored in the browser's local storage.
+The watchlist page displays all movies added by the user and allows them to remove movies from the watchlist.
+Technologies Used
+Frontend: React.js, Redux toolkit, React Router
+Styling: CSS (with SCSS preprocessor)
+Authentication: Firebase Authentication
+API Integration: The Movie Database (TMDb) API
+Deployment: The application is deployed using Vercel.
 
 
 
