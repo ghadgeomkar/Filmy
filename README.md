@@ -64,6 +64,39 @@ for up-Skilling :- https://legacy.reactjs.org/docs/optimizing-performance.html
 
 
 
+Sure! Here's how you can include the project in your resume:
+
+Movie Streaming Web Application
+GitHub Repository: Link
+
+Live Demo: Link
+
+Overview
+Built a movie streaming web application using React.js or reduc toolkit for data managment and Firebase Authentication.
+
+Features
+User authentication with Firebase
+Search functionality for specific movies
+Watchlist management and pagination
+Detailed movie information and trailers
+Dynamic home page with Now Playing, Upcoming, Top Rated, and Popular movies
+
+
+Tech Stack
+Frontend: React.js, Redux, React Router
+Authentication: Firebase Authentication
+API: The Movie Database (TMDb)
+Styling: CSS with SCSS
+Hosting: Firebase Hosting
+
+
+Future Plans
+User profiles for personalized experiences
+Additional filters and sorting options
+Enhanced UI/UX with animations
+Social sharing features for movie recommendations
+
+
 
 
 
