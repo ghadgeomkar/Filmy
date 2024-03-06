@@ -1,4 +1,4 @@
-********Filmy is a Movie Streaming Web Application********
+#Filmy is a Movie Streaming Web Application#
 
 **Overview**
 
