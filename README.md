@@ -4,6 +4,8 @@
 
 This project is a movie streaming web application built using React.js for the frontend and Firebase for user authentication. It allows users to browse through a collection of movies, watch trailers, add movies to their watchlist, and search for specific movies. The application fetches movie data from The Movie Database (TMDb) API to display information about movies.
 
+
+
 **Features**
 
 **User Authentication**
