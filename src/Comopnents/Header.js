@@ -90,7 +90,7 @@ const Header = () => {
                 <div ref={drop} className='watchList'>
                     <div className='menu'>
                         <div className='menuSections'>
-                            <Link to='/ '>
+                            <Link to='/'>
                                 <h2>Home</h2>
                             </Link>
                             <Link to='/watchlist'>
