@@ -1,10 +1,7 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../Utils/Firebase';
-import AuthenticationUser from './AuthenticationUser';
+import React, { Suspense, lazy} from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Home';
-import { eventWrapper } from '@testing-library/user-event/dist/utils';
+import LogIn from './LogIn';
 
 
 const Body = () => {
@@ -19,11 +16,11 @@ const Body = () => {
   const appRouter = createBrowserRouter([
     {
       path: '/',
-      element: <AuthenticationUser />
+      element: <Home />
     },
     {
-      path: '/home',
-      element: <Home />
+      path: '/authentication',
+      element: <LogIn />
     },
     {
       path: '/watchList',

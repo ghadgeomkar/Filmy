@@ -29,8 +29,6 @@ const MoreMovie = () => {
         setgetPaginationId(id)
     }
 
-    const emptyPaginationArray = new Array(4);
-
 
 
     return (

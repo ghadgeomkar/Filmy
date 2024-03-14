@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header'
 import { API_TOKEN } from '../Utils/Constant';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import SecondSection from './SecondSection';
 const Home = () => {
 
   const dispatch = useDispatch()
-  const [simmerUi, setSimmerUi] = useState(true)
+
 
   const NowPlaying = useSelector(store => store.MovieList.NowPlaying)
   const Upcoming = useSelector(store => store.MovieList.Upcoming)
@@ -44,11 +44,7 @@ const Home = () => {
     NowPlayingMovie()
     UpcomingMovie()
     TopRatedMovie()
-    const unsubscrib = setTimeout(() => {
-      setSimmerUi(false)
-    }, 1000);
 
-    return () => clearTimeout(unsubscrib)
   }, [])
 
 

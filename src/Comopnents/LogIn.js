@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import { FormValidation } from '../Utils/FormValidation'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../Utils/Firebase';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 
 
 const LogIn = () => {
@@ -29,7 +28,7 @@ const LogIn = () => {
                     updateProfile(user, {
                         displayName: Username.current.value
                     })
-                    navigate('/home')
+                    navigate('/')
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -42,7 +41,7 @@ const LogIn = () => {
             signInWithEmailAndPassword(auth, Email.current.value, Password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    navigate('/home')
+                    navigate('/')
                 })
                 .catch((error) => {
                     const errorCode = error.code;

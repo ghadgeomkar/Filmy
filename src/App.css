@@ -25,10 +25,6 @@ body {
   cursor: pointer;
 }
 
-.userLogoImg {
-  cursor: pointer;
-}
-
 .menuSections {
   display: flex;
   align-items: center;
@@ -53,10 +49,14 @@ body {
   justify-content: center;
 }
 
-.userLogo {
+.userSingInText h3{
+  color: #e1a368;
+  cursor: pointer;
+}
+/* .userLogo {
   display: flex;
   justify-content: center;
-}
+} */
 
 .userDropDown {
   background-color: #181c24;
