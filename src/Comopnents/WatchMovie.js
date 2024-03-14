@@ -42,7 +42,7 @@ const WatchMovie = () => {
         getMovieDetail()
     }, [])
 
-    if (!getKey || !getDetails) {
+    if (getKey === null || getDetails === null) {
         return <h1 style={{ color: 'white' }}>Loading...</h1>
     }
 
