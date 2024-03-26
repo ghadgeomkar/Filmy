@@ -1,45 +1,42 @@
-import React, { Suspense, lazy} from 'react';
+// Body.js
+import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from '../Layout ';
 import Home from './Home';
 import LogIn from './LogIn';
 
-
 const Body = () => {
-  
-  const MoreMovies = lazy(() => import('./MoreMovie'))
-  const WatchList = lazy(() => import('./WatchList'))
-  const SearchMovie = lazy(() => import('./SearchMovie'))
-  const WatchMovie = lazy(() => import('./WatchMovie'))
-
-
+  const MoreMovies = lazy(() => import('./MoreMovie'));
+  const WatchList = lazy(() => import('./WatchList'));
+  const SearchMovie = lazy(() => import('./SearchMovie'));
+  const WatchMovie = lazy(() => import('./WatchMovie'));
 
   const appRouter = createBrowserRouter([
     {
       path: '/',
-      element: <Home />
+      element: <Layout><Home /></Layout>
     },
     {
       path: '/authentication',
-      element: <LogIn />
+      element: <Layout><LogIn /></Layout>
     },
     {
       path: '/watchList',
-      element: <Suspense fallback={<h1>loading...</h1>} > <WatchList /> </Suspense>
+      element: <Layout><Suspense fallback={<h1>loading...</h1>}> <WatchList /> </Suspense></Layout>
     },
     {
       path: '/moremovies',
-      element: <Suspense fallback={<h1>loading...</h1>} > <MoreMovies /> </Suspense>
+      element: <Layout><Suspense fallback={<h1>loading...</h1>}> <MoreMovies /> </Suspense></Layout>
     },
     {
       path: "/searchmovie/:id",
-      element: <Suspense fallback={<h1>loading...</h1>} > <SearchMovie /> </Suspense>
+      element: <Layout><Suspense fallback={<h1>loading...</h1>}> <SearchMovie /> </Suspense></Layout>
     },
     {
       path: "/watchmovie/:id",
-      element: <Suspense fallback={<h1>loading...</h1>} > <WatchMovie /> </Suspense>
+      element: <Layout><Suspense fallback={<h1>loading...</h1>}> <WatchMovie /> </Suspense></Layout>
     },
-
-  ])
+  ]);
 
   return (
     <div>
@@ -49,5 +46,3 @@ const Body = () => {
 };
 
 export default Body;
-
-

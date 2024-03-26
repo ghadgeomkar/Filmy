@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_TOKEN } from '../Utils/Constant';
-import Header from './Header'
 
 const WatchMovie = () => {
     const [getKey, setGetKey] = useState(null)
@@ -35,19 +34,16 @@ const WatchMovie = () => {
         }
     }
 
-
-
     useEffect(() => {
         getMovieTraler()
         getMovieDetail()
     }, [])
 
-    if (!getKey || !getDetails) {
+    if (getKey === null || getDetails === null) {
         return <h1 style={{ color: 'white' }}>Loading...</h1>
     }
 
     return (<div>
-        <Header />
 
         {getKey === undefined ? <p className='notFoundMovie'>I can't able to find this movie </p> :
             <>
@@ -58,6 +54,7 @@ const WatchMovie = () => {
                             height="100%"
                             src={'https://www.youtube.com/embed/' + getKey + '?rel=0&autoplay=1&mute=0'}
                             title="YouTube video player"
+                            data-testid='trailer'
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen>

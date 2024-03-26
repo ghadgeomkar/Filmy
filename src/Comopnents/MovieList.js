@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 const MovieList = ({ title, movie, seeTitle }) => {
 
-
+console.log(movie);
     return (
-        <div className='movieList'>
+        <div className='movieList' >
             <div className='movieListTitle'>
                 <h1>{title}</h1>
                 <Link to='/moremovies'  ><h2 onClick={() => localStorage.setItem('getMovieTitle', JSON.stringify({ title, seeTitle }))} > See more </h2> </Link>

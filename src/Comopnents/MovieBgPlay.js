@@ -15,7 +15,7 @@ const MovieBgPlay = () => {
 
 
   return (
-    <div className='MovieBgPlay'>
+    <div data-testid='MovieBgPlay' className='MovieBgPlay'>
       <iframe
         width="100%"
         height="100%"

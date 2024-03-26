@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from './Header'
 import close from '../Images/message-square-x-solid-24.png'
 import { Link } from 'react-router-dom'
 
@@ -22,7 +21,6 @@ const WatchList = () => {
     }
 
     return (<>
-        <Header />
         <div className='wacthListSection'>
             {
                 getMovies.length > 0 ? movies.map((movie) => {

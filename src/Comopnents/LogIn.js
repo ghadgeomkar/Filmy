@@ -3,6 +3,7 @@ import { FormValidation } from '../Utils/FormValidation'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../Utils/Firebase';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 
 const LogIn = () => {
@@ -64,6 +65,7 @@ const LogIn = () => {
 
     return (
         <div className='logInSection'>
+        {/* <Header /> */}
             <div className='logInPage'>
                 <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg" alt="" />
                 <div className='logIn'>

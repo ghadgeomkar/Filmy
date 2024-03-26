@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from './Header'
 import { API_TOKEN } from '../Utils/Constant'
 import MovieCard from './MovieCard'
 import { Link } from 'react-router-dom'
@@ -33,14 +32,13 @@ const MoreMovie = () => {
 
     return (
         <div>
-            <Header />
             {
-                !getData ? <h1 style={{ color: 'white' }}>Loading...</h1> :
+                !getMovies ? <h1 style={{ color: 'white' }}>Loading...</h1> :
                     <>
 
 
                         <div className='moreMovieSeaction'>
-                            <h1>{getTitle.title}</h1>
+                            <h1 data-testid='moreMovie_title'>{getTitle.title}</h1>
                             <div className='moreMovieComponent'>
                                 {
                                     getMovies && getMovies.map((movie) => {

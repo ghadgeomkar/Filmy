@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Header from './Header'
 import { API_TOKEN } from '../Utils/Constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddTopRatedMoies, addNowPlayingMovies, addPopularMovies, addUpcomingMovies } from '../Store/MovieListSlice';
@@ -54,7 +53,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
       <>
         <FirstSection />
         <SecondSection />

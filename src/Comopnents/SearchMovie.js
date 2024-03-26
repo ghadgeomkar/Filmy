@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import Header from './Header'
 import { API_TOKEN } from '../Utils/Constant'
 import MovieCard from './MovieCard'
 import { useDispatch, useSelector } from 'react-redux'
@@ -36,7 +35,6 @@ const SearchMovie = () => {
     
     return (
         <>
-            <Header />
             <div className='searchMovieComponent'>
                 <h2>{id}:</h2>
                 <div className='getSearchMovie'>
