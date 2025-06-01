@@ -75,7 +75,7 @@ const Header = () => {
                         <h2>Home</h2>
                     </Link>
                     <Link to='/watchlist'>
-                        <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
+                        <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >Watchlist</h2>
                         {
                             getWatchListMovie === null ? <p className='watchListCount'>0</p> : <p className='watchListCount'>{getWatchListMovie.length}</p>
                         }
@@ -94,7 +94,7 @@ const Header = () => {
                                 <h2>Home</h2>
                             </Link>
                             <Link to='/watchlist'>
-                                <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >WacthList</h2>
+                                <h2 style={{ scale: isOver ? '1.1' : '1', transition: '0.2s' }} >Watchlist</h2>
                                 {
                                     getWatchListMovie === null ? <p className='watchListCount'>0</p> : <p className='watchListCount'>{getWatchListMovie.length}</p>
                                 }
