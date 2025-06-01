@@ -70,18 +70,18 @@ const LogIn = () => {
                 <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg" alt="" />
                 <div className='logIn'>
                     <div className='logInForm' >
-                        <h2>{toggel ? 'Sing Up' : 'Sing In'} </h2>
+                        <h2>{toggel ? 'sign Up' : 'sign In'} </h2>
                         {
                             toggel && <input type="text" placeholder='Enter your Username' ref={Username} />
                         }
                         <input type="text" placeholder='Enter your email' ref={Email} />
                         <input type="password" placeholder='Enter your password' ref={Password} />
                         <h5 className='formError'> {validationMsg} </h5>
-                        <button onClick={handelValidation}>{toggel ? 'Sing Up' : 'Sing In'}</button>
+                        <button onClick={handelValidation}>{toggel ? 'sign Up' : 'sign In'}</button>
 
                         {
-                            toggel ? <p>already have a account? <span className='toggelBTN' onClick={handelLoginPage} > Sing In </span></p> :
-                                <p>New to Filmy? <span className='toggelBTN' onClick={handelLoginPage} >Sing Up </span></p>
+                            toggel ? <p>already have a account? <span className='toggelBTN' onClick={handelLoginPage} > sign In </span></p> :
+                                <p>New to Filmy? <span className='toggelBTN' onClick={handelLoginPage} >sign Up </span></p>
                         }
                     </div>
                 </div>
