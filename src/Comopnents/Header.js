@@ -112,7 +112,7 @@ const Header = () => {
                 </div>
 
                 <div className='userSingInText'>
-                    {handelUser ? <h3 onClick={handelLogOut}>Log Out</h3> : <Link to='/authentication' >  <h3> Sing In </h3> </Link>}
+                    {handelUser ? <h3 onClick={handelLogOut}>Log Out</h3> : <Link to='/authentication' >  <h3> sign in </h3> </Link>}
                 </div>
             </div>
         </div>
